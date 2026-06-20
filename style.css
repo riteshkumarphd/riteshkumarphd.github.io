@@ -5,13 +5,16 @@
 }
 
 body {
-    font-family: 'Georgia', serif;
+    font-family: 'Inter', 'Georgia', sans-serif;
     color: #333;
     line-height: 1.75;
-    /* Subtle warm dot-pattern background */
     background-color: #edeae3;
     background-image: radial-gradient(circle, rgba(0,0,0,0.07) 1px, transparent 1px);
     background-size: 22px 22px;
+}
+
+h1, h2, h3, .profile-name, .page-header h1, .welcome-heading {
+    font-family: 'Playfair Display', 'Georgia', serif;
 }
 
 /* ── Fade-in animation ── */
@@ -421,27 +424,31 @@ section > p {
     font-style: italic;
 }
 
-/* Research interests */
-.interests-list {
-    list-style: none;
+/* ── Research interest tags ── */
+.interest-tags {
     display: flex;
-    flex-direction: column;
-    gap: 0.7rem;
+    flex-wrap: wrap;
+    gap: 0.6rem;
 }
 
-.interests-list li {
-    padding-left: 1.4rem;
-    position: relative;
-    font-size: 1.05rem;
-    color: #444;
+.interest-tag {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: #f0ece3;
+    border: 1px solid #d4c9a8;
+    color: #5a4a1a;
+    font-size: 0.85rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    border-radius: 50px;
+    letter-spacing: 0.3px;
+    transition: all 0.2s;
 }
 
-.interests-list li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: #c9a84c;
-    font-weight: bold;
+.interest-tag:hover {
+    background: #8B1A1A;
+    border-color: #8B1A1A;
+    color: #fff;
 }
 
 /* Papers */
@@ -468,12 +475,44 @@ section > p {
     margin-bottom: 0.3rem;
 }
 
-.paper-status {
-    font-size: 0.82rem;
-    color: #7a6a2a;
-    font-weight: bold;
+/* ── Section note ── */
+.section-note {
+    font-size: 0.88rem;
+    color: #777;
+    font-style: italic;
+    margin-bottom: 1.4rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.section-note a {
+    color: #8B1A1A;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* ── Paper status badges ── */
+.paper-badge {
+    display: inline-block;
+    padding: 0.25rem 0.8rem;
+    font-size: 0.75rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    border-radius: 50px;
+    letter-spacing: 0.4px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    margin-top: 0.4rem;
+}
+
+.badge-green {
+    background: #d4edda;
+    color: #1a6b35;
+    border: 1px solid #a8d5b5;
+}
+
+.badge-amber {
+    background: #fff3cd;
+    color: #7a5200;
+    border: 1px solid #f0d080;
 }
 
 /* Conferences */
