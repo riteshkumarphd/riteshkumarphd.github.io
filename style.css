@@ -1,0 +1,554 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    color: #333;
+    line-height: 1.75;
+    /* Subtle warm dot-pattern background */
+    background-color: #edeae3;
+    background-image: radial-gradient(circle, rgba(0,0,0,0.07) 1px, transparent 1px);
+    background-size: 22px 22px;
+}
+
+/* ── Top accent bar ── */
+body::before {
+    content: '';
+    display: block;
+    height: 4px;
+    background: linear-gradient(90deg, #6b0f1a, #8B1A1A, #b5302a);
+}
+
+/* ── Navbar ── */
+.navbar {
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 58px;
+}
+
+.nav-brand {
+    color: #222;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+.nav-logo {
+    height: 36px;
+    width: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #555;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+    transition: color 0.15s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #111;
+}
+
+/* ── Page background wrapper ── */
+.page-bg {
+    padding: 2.5rem 1.5rem 3rem;
+    min-height: calc(100vh - 58px - 160px);
+}
+
+/* ── Profile card (white card floating on pattern bg) ── */
+.profile-card {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    padding: 3.5rem 3rem 2rem;
+}
+
+/* ── Profile grid ── */
+.profile-grid {
+    display: grid;
+    grid-template-columns: 5fr 6fr;
+    gap: 4rem;
+    align-items: start;
+    margin-bottom: 2.5rem;
+}
+
+/* ── Photo crop (focus on upper body / face) ── */
+.photo-crop {
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 10%;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.photo-crop:hover .profile-photo {
+    transform: scale(1.03);
+}
+
+/* ── Info column ── */
+.profile-info-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1.5rem;
+}
+
+.profile-name {
+    font-size: 2.7rem;
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: #111;
+    margin-bottom: 0.6rem;
+    text-align: center;
+}
+
+.profile-subtitle {
+    font-size: 0.97rem;
+    color: #666;
+    margin-bottom: 0.4rem;
+    text-align: center;
+}
+
+.profile-institution {
+    display: block;
+    color: #8B1A1A;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-size: 0.97rem;
+    margin-bottom: 1.4rem;
+    text-align: center;
+}
+
+.profile-institution:hover {
+    color: #5a0f0f;
+}
+
+/* ── Social icons ── */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 2.2rem;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #4a4a4a;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.social-icon svg {
+    width: 17px;
+    height: 17px;
+}
+
+.social-icon:hover {
+    background: #8B1A1A;
+}
+
+/* ── Bio text ── */
+.profile-bio {
+    width: 100%;
+    text-align: left;
+}
+
+.welcome-heading {
+    font-size: 1.05rem;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 0.6rem;
+}
+
+.profile-bio p {
+    font-size: 0.95rem;
+    color: #444;
+    text-align: justify;
+    line-height: 1.8;
+    margin-bottom: 0.8rem;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #e8e8e8;
+    margin-bottom: 1rem;
+}
+
+/* ── Footer ── */
+.footer {
+    background: #cdd2db;
+    padding: 2.8rem 2.5rem;
+}
+
+.footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.footer-logo-col {
+    flex-shrink: 0;
+}
+
+.footer-logo {
+    height: 130px;
+    width: auto;
+    opacity: 0.85;
+}
+
+.footer-contact p {
+    font-size: 0.88rem;
+    color: #333;
+    margin-bottom: 0.45rem;
+    font-family: 'Georgia', serif;
+}
+
+.footer-contact a {
+    color: #8B1A1A;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.footer-contact a:hover {
+    color: #5a0f0f;
+}
+
+.footer-social {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.9rem;
+}
+
+.footer-social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #555;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.footer-social-icon svg {
+    width: 14px;
+    height: 14px;
+}
+
+.footer-social-icon:hover {
+    background: #8B1A1A;
+}
+
+/* ════════════════════════════════════════
+   Inner pages (Research / CV)
+   ════════════════════════════════════════ */
+
+.page-header {
+    background: linear-gradient(135deg, #1a2332 0%, #2c3e50 100%);
+    color: #fff;
+    padding: 60px 2rem;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.2rem;
+    font-weight: normal;
+    letter-spacing: 2px;
+    color: #c9a84c;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3.5rem 2rem 4rem;
+}
+
+section {
+    margin-bottom: 3.5rem;
+}
+
+section h2 {
+    font-size: 1.35rem;
+    color: #1a2332;
+    border-bottom: 2px solid #c9a84c;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.6rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+section > p {
+    margin-bottom: 1.1rem;
+    font-size: 1.05rem;
+    color: #444;
+}
+
+/* Contact */
+.contact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.contact-item {
+    display: flex;
+    gap: 1rem;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.contact-label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #1a2332;
+    min-width: 165px;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+}
+
+.contact-item a {
+    color: #2c5282;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+/* Education */
+.edu-item {
+    margin-bottom: 1.8rem;
+    padding-left: 1.2rem;
+    border-left: 3px solid #c9a84c;
+}
+
+.edu-degree {
+    font-weight: bold;
+    font-size: 1.05rem;
+    color: #1a2332;
+}
+
+.edu-institution {
+    color: #555;
+    font-style: italic;
+}
+
+.edu-year {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.edu-note {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+    font-style: italic;
+}
+
+/* Research interests */
+.interests-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.interests-list li {
+    padding-left: 1.4rem;
+    position: relative;
+    font-size: 1.05rem;
+    color: #444;
+}
+
+.interests-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: #c9a84c;
+    font-weight: bold;
+}
+
+/* Papers */
+.paper-item {
+    margin-bottom: 1.8rem;
+    padding: 1.2rem 1.4rem;
+    background: #f8f8f6;
+    border-left: 4px solid #c9a84c;
+    border-radius: 0 4px 4px 0;
+}
+
+.paper-title {
+    font-size: 1.02rem;
+    color: #1a2332;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    line-height: 1.5;
+}
+
+.paper-authors {
+    color: #555;
+    font-style: italic;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+}
+
+.paper-status {
+    font-size: 0.82rem;
+    color: #7a6a2a;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Conferences */
+.conf-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.conf-list li {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1.2rem;
+    border-left: 3px solid #c9a84c;
+}
+
+.conf-name {
+    font-weight: bold;
+    color: #1a2332;
+    font-size: 1rem;
+}
+
+.conf-details {
+    color: #666;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* Service */
+.service-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.service-list li {
+    padding-left: 1.4rem;
+    position: relative;
+    font-size: 1rem;
+    color: #444;
+}
+
+.service-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: #c9a84c;
+}
+
+/* CV page */
+.cv-container {
+    text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+}
+
+.cv-intro {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.cv-download-btn {
+    display: inline-block;
+    background-color: #1a2332;
+    color: #fff;
+    padding: 0.9rem 2.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.cv-download-btn:hover {
+    background-color: #8B1A1A;
+    color: #fff;
+}
+
+/* ── Responsive ── */
+@media (max-width: 720px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .photo-crop {
+        height: 300px;
+    }
+    .nav-links {
+        gap: 1.2rem;
+    }
+    .footer-inner {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .contact-item {
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+    .contact-label {
+        min-width: unset;
+    }
+}
